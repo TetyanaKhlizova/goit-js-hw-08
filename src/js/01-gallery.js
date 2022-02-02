@@ -1,5 +1,5 @@
 // Add imports above this line
-import { galleryItems } from './gallery-items';
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 import SimpleLightbox from 'simplelightbox';
@@ -26,6 +26,6 @@ function onImgClick(event) {
     
       
 }
-let lightbox = new SimpleLightbox('.gallery a ', {caphionsDelay: 250, captionsData: 'alt'});
+let lightbox = new SimpleLightbox('.gallery__item', {caphionsDelay: 250, captionsData: 'alt'});
 
 console.log(galleryItems);
