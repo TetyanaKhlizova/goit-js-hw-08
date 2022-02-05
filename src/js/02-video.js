@@ -11,16 +11,9 @@ const player = new Vimeo.Player(iframe);
 if (time) {
   player.setCurrentTime(time);
 }
-// player.on('timeupdate', throttle(onTimeUpdate, 1000));
+player.on('timeupdate', throttle(timeUpdate, 1000));
 
-// function onTimeUpdate({ seconds }) {
-//   localStorage.setItem(TIME, seconds);
-// }
-    player.on('play', function() {
-        console.log('played the video!');
-    });
-
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-    });
-    
+function timeUpdate({ seconds }) {
+  localStorage.setItem(TIME, seconds);
+}
+   
