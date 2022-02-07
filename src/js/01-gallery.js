@@ -2,16 +2,17 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-import SimpleLightbox from 'simplelightbox';
+import SimpleLightbox from "simplelightbox";
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const containerGallery = document.querySelector('ul.gallery');
+
+const containerGallery = document.querySelector('.gallery');
 const htmlGallery = galleryItems.reduce((acc, {preview,  original, description}) => {
-    acc += `<li> <a class="gallery__item" href='${original}'>
+    acc += `<a class="gallery__item" href='${original}'>
   <img class="gallery__image"
    src='${preview}',
     alt='${description}', />
-    </a> </Li> `;
+    </a>`;
     return acc;
 },'');
 containerGallery.insertAdjacentHTML('beforeend', htmlGallery);
@@ -26,6 +27,6 @@ function onImgClick(event) {
     
       
 }
-let lightbox = new SimpleLightbox('.gallery__item', {caphionsDelay: 250, captionsData: 'alt'});
+const lightbox = new SimpleLightbox('.gallery__item', {captionsDelay: 250, captionsData: 'alt'});
 
 console.log(galleryItems);
