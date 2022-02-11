@@ -25,12 +25,12 @@ function onFormInput({ target: { name, value } }) {
   localStorage.setItem(LOCAL_KEY, JSON.stringify(formValues));
 }
 
-function onFormSubmit(e) {
+function onFormSubmit(event) {
   event.preventDefault();
 
   const submittedData = {
-    email: e.currentTarget.email.value,
-    message: e.currentTarget.message.value,
+    email: event.currentTarget.email.value,
+    message: event.currentTarget.message.value,
   };
 
 
